@@ -1,0 +1,9 @@
+data/
+results/smoke/
+results/smoke_local.csv
+results/local_out/
+results/gcp_out/
+results/test_compare_rgb.png
+__pycache__/
+*.pyc
+results/gcp_smoke.csv

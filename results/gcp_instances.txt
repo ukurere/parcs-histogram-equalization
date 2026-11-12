@@ -1,0 +1,6 @@
+﻿NAME     ZONE               MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+master   europe-central2-a  e2-medium                  10.186.0.2   34.118.63.206  RUNNING
+worker1  europe-central2-a  e2-medium                  10.186.0.6   34.118.8.57    RUNNING
+worker2  europe-central2-a  e2-medium                  10.186.0.4   34.118.47.34   RUNNING
+worker3  europe-central2-a  e2-medium                  10.186.0.3   34.118.93.5    RUNNING
+worker4  europe-central2-a  e2-medium                  10.186.0.5   34.118.89.224  RUNNING
