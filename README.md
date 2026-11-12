@@ -171,7 +171,7 @@ python tools/benchmark.py --master http://<MASTER_EXTERNAL_IP>:8080 --input data
 
 ## 7. GitHub
 
-> TODO: посилання на репозиторій.
+https://github.com/ukurere/parcs-histogram-equalization
 
 ## Структура
 
