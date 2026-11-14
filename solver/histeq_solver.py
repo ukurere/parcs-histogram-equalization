@@ -217,19 +217,23 @@ class Solver:
     @staticmethod
     def parse_pnm(data):
         """Parse binary P5/P6 (maxval 255). Returns (magic, w, h, bytearray)."""
+        if data[:2] not in (b'P5', b'P6'):
+            raise ValueError('Input must be a binary PGM/PPM image (P5/P6), got %r. '
+                             'Convert JPG/PNG with tools/make_input.py' % data[:8])
         tokens = []
         pos = 0
+        n = len(data)
         while len(tokens) < 4:
-            if pos >= len(data):
-                raise ValueError('Truncated PNM header')
-            while data[pos:pos + 1].isspace():
+            while pos < n and data[pos:pos + 1].isspace():
                 pos += 1
+            if pos >= n:
+                raise ValueError('Truncated PNM header')
             if data[pos:pos + 1] == b'#':
-                while data[pos:pos + 1] not in (b'\n', b''):
+                while pos < n and data[pos:pos + 1] != b'\n':
                     pos += 1
                 continue
             start = pos
-            while not data[pos:pos + 1].isspace():
+            while pos < n and not data[pos:pos + 1].isspace():
                 pos += 1
             tokens.append(data[start:pos].decode('ascii'))
         pos += 1  # single whitespace after maxval
